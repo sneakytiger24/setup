@@ -1,5 +1,4 @@
 sudo dnf upgrade --refresh -y
-
 # NVM AND NODEJS INSTALLATION SCRIPT
 # Download and install nvm:
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
@@ -43,6 +42,14 @@ sudo dnf install code -y # or code-insiders
 sudo dnf install java-21-openjdk-devel.x86_64 -y && sudo dnf install java-25-openjdk-devel.x86_64 -y
 java -version
 javac -version
+#########################################################################################################
+# SSH ED25519 Key Generation (no passphrase)
+ssh-keygen -t ed25519 -f ~/.ssh/id_ed25519 -N ""
+# Print the SSH public key
+cat ~/.ssh/id_ed25519.pub
+#########################################################################################################
+# Install Github CLI
+sudo dnf install gh -y
 #########################################################################################################
 # Clean up
 sudo dnf autoremove -y && sudo dnf clean all
