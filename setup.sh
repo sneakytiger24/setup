@@ -39,7 +39,7 @@ sudo dnf check-update
 sudo dnf install code -y # or code-insiders
 #########################################################################################################
 # Java Installation Script
-sudo dnf install java-21-openjdk-devel.x86_64 -y && sudo dnf install java-25-openjdk-devel.x86_64 -y
+sudo dnf install java-21-openjdk.x86_64 -y && sudo dnf install java-25-openjdk.x86_64 -y
 java -version
 javac -version
 #########################################################################################################
@@ -50,6 +50,10 @@ cat ~/.ssh/id_ed25519.pub
 #########################################################################################################
 # Install Github CLI
 sudo dnf install gh -y
+#########################################################################################################
+# C## .NET SDK Installation Script
+sudo dnf install dotnet-sdk-9.0 -y
+dotnet --version
 #########################################################################################################
 # Clean up
 sudo dnf autoremove -y && sudo dnf clean all
